@@ -64,9 +64,9 @@ describe("index.html", () => {
       const hint1 = "No <link> tag found in the <head>";
       expect(link, hint1).to.exist;
 
-      expect(link).to.have.attribute("href", "style.css");
+      expect(link).to.have.attribute("href","style.css");
 
-      expect(link).to.have.attribute("rel", "stylesheet");
+      expect(link).to.have.attribute("rel","stylesheet");
     });
 
     it("has a <title> tag to enclose the site title", () => {
@@ -88,7 +88,7 @@ describe("index.html", () => {
       const validator = new HtmlValidate({
         extends: ["html-validate:recommended"],
         rules: {
-          "void-style": ["warn"],
+          "void-style":["warn"],
         },
       });
       const report = validator.validateString(html);
@@ -100,7 +100,7 @@ describe("index.html", () => {
           .join("\n\t");
       }
 
-      expect(report.valid, `invalid HTML: \n\t${errorReport}\n\t`).to.be.true;
+      expect(report.valid, `invalid HTML:\n\t${errorReport}\n\t`).to.be.true;
     });
   });
 });
